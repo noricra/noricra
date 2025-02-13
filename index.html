@@ -2,57 +2,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formation Remboursement Pro - Devenez expert en remboursements</title>
+  <title>Formation Remboursement Crypto - Expert en remboursement Bitrefill</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">Formation Remboursement Crypto</div>
+      <div class="auth-buttons">
+        <button class="btn-secondary" onclick="openModal('loginModal')">Se connecter</button>
+        <button class="btn-primary" onclick="openModal('registerModal')">S'inscrire</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modales d'authentification -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Connexion</h2>
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Mot de passe</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <button type="submit" class="btn-primary">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2>Inscription</h2>
+      <div class="register-benefits">
+        <h3>Pourquoi créer un compte ?</h3>
+        <ul>
+          <li> Gagnez des avantages en créant un compte</li>
+          <li> Suivez vos progrès et vos remboursements</li>
+          <li> Recevez des offres exclusives</li>
+        </ul>
+      </div>
+      <form id="registerForm" onsubmit="return handleRegister(event)">
+        <div class="form-group">
+          <label for="registerName">Nom complet</label>
+          <input type="text" id="registerName" required>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Mot de passe</label>
+          <input type="password" id="registerPassword" required>
+        </div>
+        <button type="submit" class="btn-primary">Créer mon compte</button>
+      </form>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="hero-content">
-      <h1>Devenez Expert en Remboursements</h1>
-      <h2>Apprenez à récupérer votre argent comme un pro</h2>
+      <h1>Maîtrisez l'Art du Remboursement Crypto sur Bitrefill</h1>
+      <h2>Découvrez les techniques secrètes pour obtenir vos remboursements en cryptomonnaies</h2>
       <div class="cta-primary">
-        <a href="#pricing" class="btn-primary pulse">Je veux me former maintenant !</a>
+        <a href="#pricing" class="btn-primary pulse">Je veux découvrir les secrets !</a>
       </div>
     </div>
     <div class="hero-stats">
       <div class="stat">
         <span class="number" id="studentCount">1,547</span>
-        <span class="label">Étudiants formés</span>
+        <span class="label">Étudiants satisfaits</span>
       </div>
       <div class="stat">
-        <span class="number">97%</span>
+        <span class="number">100%</span>
         <span class="label">Taux de réussite</span>
       </div>
       <div class="stat">
-        <span class="number">€2.3M</span>
-        <span class="label">Remboursés en 2023</span>
+        <span class="number">250K€</span>
+        <span class="label">Remboursements obtenus</span>
       </div>
     </div>
   </header>
 
   <section class="benefits">
-    <h2>Ce que vous allez apprendre</h2>
+    <h2>Ce que vous allez maîtriser</h2>
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="icon">📜</div>
-        <h3>Cadre légal</h3>
-        <p>Maîtrisez vos droits et la législation sur les remboursements</p>
-      </div>
-      <div class="benefit-card">
-        <div class="icon">💼</div>
-        <h3>Techniques pro</h3>
-        <p>Les meilleures stratégies pour obtenir un remboursement</p>
-      </div>
-      <div class="benefit-card">
-        <div class="icon">📝</div>
-        <h3>Modèles prêts</h3>
-        <p>Des templates de lettres et emails qui marchent</p>
-      </div>
-      <div class="benefit-card">
-        <div class="icon">🎯</div>
-        <h3>Cas pratiques</h3>
-        <p>Études de cas réels et mises en situation</p>
-      </div>
+      <a href="legal.html" class="benefit-card">
+        <div class="crypto-icon">⚖️</div>
+        <h3>Cadre Légal</h3>
+        <p>Les fondements juridiques des remboursements crypto</p>
+      </a>
+      <a href="techniques.html" class="benefit-card">
+        <div class="crypto-icon">🔑</div>
+        <h3>Techniques Pro</h3>
+        <p>Les méthodes éprouvées sur Bitrefill</p>
+      </a>
+      <a href="templates.html" class="benefit-card">
+        <div class="crypto-icon">📝</div>
+        <h3>Modèles Prêts</h3>
+        <p>Templates de messages qui fonctionnent</p>
+      </a>
+      <a href="cases.html" class="benefit-card">
+        <div class="crypto-icon">📊</div>
+        <h3>Cas Pratiques</h3>
+        <p>Exemples réels de remboursements réussis</p>
+      </a>
     </div>
   </section>
 
@@ -61,42 +120,119 @@
     <div class="testimonial-carousel" id="testimonialCarousel">
       <div class="testimonial">
         <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='45' fill='%23ddd'/></svg>" alt="Photo témoignage">
-        <p>"J'ai réussi à me faire rembourser 1200€ en suivant la méthode. Incroyable !"</p>
+        <p>"J'ai réussi à obtenir un remboursement de 1000€ grâce à cette formation !"</p>
         <cite>- Marie D.</cite>
       </div>
       <div class="testimonial">
         <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='45' fill='%23ddd'/></svg>" alt="Photo témoignage">
-        <p>"Formation claire et efficace. Je recommande à 100% !"</p>
+        <p>"Formation très claire et efficace. Je recommande à 100% !"</p>
         <cite>- Pierre M.</cite>
       </div>
       <div class="testimonial">
         <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='45' fill='%23ddd'/></svg>" alt="Photo témoignage">
-        <p>"En 3 mois, j'ai récupéré plus que le prix de la formation."</p>
+        <p>"En 2 mois, j'ai récupéré plus que le prix de la formation."</p>
         <cite>- Sophie L.</cite>
       </div>
     </div>
   </section>
 
   <section class="pricing" id="pricing">
-    <h2>Commencez maintenant</h2>
+    <h2>Offre Spéciale de Lancement ⚡</h2>
+    <div class="special-offer-banner">
+      <div class="countdown-container">
+        <p>Offre limitée aux 100 premiers acheteurs !</p>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span id="hours">24</span>
+            <label>heures</label>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <label>minutes</label>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <label>secondes</label>
+          </div>
+        </div>
+        <p class="spots-left">Plus que <span id="spotsLeft">37</span> places disponibles !</p>
+      </div>
+    </div>
     <div class="pricing-cards">
       <div class="pricing-card">
-        <h3>Formation Complète</h3>
+        <div class="best-value-tag">OFFRE DE LANCEMENT 🔥</div>
+        <h3>Ebook Remboursement Crypto Elite</h3>
         <div class="price">
-          <span class="amount">297€</span>
+          <div class="original-price">99€</div>
+          <span class="amount">27€</span>
           <span class="period">accès à vie</span>
         </div>
         <ul class="features">
-          <li>✅ 12 modules vidéo HD</li>
-          <li>✅ Templates de lettres</li>
-          <li>✅ Support par email</li>
-          <li>✅ Groupe privé</li>
+          <li>✅ Ebook complet format PDF</li>
+          <li>✅ Guide étape par étape Bitrefill</li>
+          <li>✅ Templates de messages</li>
+          <li>✅ Groupe Telegram privé</li>
           <li>✅ Mises à jour gratuites</li>
         </ul>
-        <div class="guarantee">
-          <p>🔒 Garantie satisfait ou remboursé 30 jours</p>
+        <a href="#" class="btn-primary pulse" onclick="openPurchaseModal()">Je profite de l'offre maintenant</a>
+        <p class="urgency-note">⚠️ Prix normal: 99€ après les 100 premières ventes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nouveau modal d'achat -->
+  <div id="purchaseModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('purchaseModal')">&times;</span>
+      <h2>Choisissez votre option d'achat</h2>
+      <div class="purchase-options">
+        <div class="purchase-option">
+          <h3>Créer un compte</h3>
+          <p>Gagnez 15€ à chaque fois qu'un ami achète la formation !</p>
+          <button class="btn-primary" onclick="openModal('registerModal'); closeModal('purchaseModal')">
+            Créer un compte
+          </button>
         </div>
-        <a href="#" class="btn-primary">Je m'inscris maintenant</a>
+        <div class="purchase-option">
+          <h3>Commander en tant qu'invité</h3>
+          <p>Accéder directement au paiement sécurisé</p>
+          <button class="btn-secondary" onclick="redirectToPayment()">
+            Commander maintenant
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="referral">
+    <h2>Gagnez des Crypto en Parrainant !</h2>
+    <div class="referral-container" id="referralContainer">
+      <div class="referral-info">
+        <h3>🚀 Programme de Parrainage Crypto Elite</h3>
+        <p>Pour chaque ami qui rejoint la formation :</p>
+        <ul class="referral-benefits">
+          <li>💎 5€ en Bitcoin instantanément</li>
+          <li>🎁 Accès aux sessions de remboursement en direct</li>
+          <li>🔥 Bonus exclusifs en crypto</li>
+        </ul>
+        <p class="referral-bonus">Votre ami reçoit -10% sur sa formation !</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="referral-stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number" id="totalReferrals">0</div>
+        <div class="stat-label">Amis parrainés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0€</div>
+        <div class="stat-label">Par parrainage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="totalEarned">0€</div>
+        <div class="stat-label">Gains totaux</div>
       </div>
     </div>
   </section>
@@ -114,15 +250,16 @@
       </details>
       <details>
         <summary>Y a-t-il un support ?</summary>
-        <p>Oui, vous avez accès à notre support par email et à notre groupe privé Facebook pour poser vos questions.</p>
+        <p>Oui, vous avez accès à notre support par email et à notre groupe privé Telegram pour poser vos questions.</p>
       </details>
     </div>
   </section>
 
   <footer>
-    <p>© 2024 Formation Remboursement Pro. Tous droits réservés.</p>
+    <p> 2024 Formation Remboursement Crypto. Tous droits réservés.</p>
   </footer>
 
+  <script src="auth.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

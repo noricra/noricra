@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement Sécurisé - Formation Remboursement Crypto</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js" defer></script>
+  <script src="script.js" defer></script>
+  <style>
+    .checkout-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+    
+    .payment-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .payment-summary {
+      background: var(--light-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .payment-summary h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .form-row {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-row label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-row input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .card-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .secure-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #28a745;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    
+    .total-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Formation Remboursement Crypto</a>
+    </div>
+  </nav>
+
+  <main class="checkout-container">
+    <h1>Finaliser votre commande</h1>
+    
+    <form class="payment-form" id="paymentForm">
+      <div class="payment-summary">
+        <h3>Récapitulatif de votre commande</h3>
+        <p>Ebook Remboursement Crypto Elite</p>
+        <p class="total-price">27,00 €</p>
+      </div>
+      
+      <div class="form-row">
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="address">Adresse de facturation</label>
+        <input type="text" id="address" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="city">Ville</label>
+        <input type="text" id="city" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="postal">Code postal</label>
+        <input type="text" id="postal" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="card">Numéro de carte</label>
+        <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+      </div>
+      
+      <div class="form-row card-row">
+        <div>
+          <label for="cardName">Nom sur la carte</label>
+          <input type="text" id="cardName" required>
+        </div>
+        <div>
+          <label for="expiry">Date d'exp.</label>
+          <input type="text" id="expiry" placeholder="MM/AA" required>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" required>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn-primary" style="width: 100%;">
+        Payer 27,00 €
+      </button>
+      
+      <div class="secure-badge">
+        🔒 Paiement sécurisé - Vos données sont chiffrées
+      </div>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulation de paiement réussi
+      alert('Paiement effectué avec succès ! Vous allez recevoir un email avec votre ebook.');
+      window.location.href = './index.html';
+    });
+  </script>
+</body>
+</html>
