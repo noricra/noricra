@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #f7931a;
-    --secondary-color: #4e3fce;
+    --primary-color: #f7931a; /* Bitcoin orange */
+    --secondary-color: #4e3fce; /* Crypto purple */
     --text-color: #1f2937;
     --light-bg: #f8f9fd;
-    --accent-color: #1abc9c; /* Vert plus doux */
+    --accent-color: #00ff88; /* Crypto green */
   }
   
   * {
@@ -18,38 +18,6 @@
     color: var(--text-color);
   }
   
-  /* Navigation */
-  .main-nav {
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .logo {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-  }
-  
-  .auth-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  /* Hero Section */
   .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -58,13 +26,12 @@
   }
   
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    line-height: 1.2;
   }
   
   .hero-content h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 2rem;
   }
@@ -74,17 +41,12 @@
     justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
-    flex-wrap: wrap;
   }
   
   .stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    min-width: 160px;
   }
   
   .stat .number {
@@ -97,7 +59,6 @@
     opacity: 0.9;
   }
   
-  /* Boutons */
   .btn-primary {
     display: inline-block;
     background: var(--accent-color);
@@ -113,6 +74,352 @@
     transform: translateY(-2px);
   }
   
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+  }
+  
+  section {
+    padding: 4rem 2rem;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .benefit-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonials {
+    background: var(--light-bg);
+  }
+  
+  .testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .testimonial {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .pricing-cards {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    padding-top: 2rem;
+  }
+  
+  .price {
+    margin: 2rem 0;
+  }
+  
+  .price .amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    animation: pulsePricing 2s infinite;
+  }
+  
+  .price .period {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  @keyframes pulsePricing {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+  }
+  
+  .features li {
+    margin: 1rem 0;
+  }
+  
+  .guarantee {
+    background: #f0fdf4;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2rem 0;
+  }
+  
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  details {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+  }
+  
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  details p {
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-bg);
+  }
+  
+  .referral {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 2rem;
+    margin-top: -2rem; 
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  .referral::before {
+    content: "🔥 Programme de Parrainage Hot 🔥";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .referral-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .referral-benefits {
+    list-style: none;
+    margin: 2rem 0;
+  }
+  
+  .referral-benefits li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .referral-bonus {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  
+  .referral-code-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  .code-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .code-display span {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+  }
+  
+  .copy-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .copy-btn:hover {
+    background: var(--secondary-color);
+  }
+  
+  .share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  
+  .share-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .whatsapp {
+    background: #25D366;
+    color: white;
+  }
+  
+  .email {
+    background: #EA4335;
+    color: white;
+  }
+  
+  .referral-stats {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+  }
+  
+  .stats-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: #666;
+  }
+  
+  .main-nav {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
   .btn-secondary {
     background: transparent;
     border: 2px solid var(--primary-color);
@@ -124,160 +431,442 @@
     transition: all 0.2s;
   }
   
-  /* Sections principales */
-  section {
-    padding: 3rem 1rem;
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
   }
   
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
   }
   
-  .benefit-card {
+  .modal-content {
+    position: relative;
     background: white;
-    padding: 1.5rem;
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .register-benefits {
+    background: var(--light-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .register-benefits h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .register-benefits ul {
+    list-style: none;
+  }
+  
+  .register-benefits li {
+    margin: 0.5rem 0;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  
+  .referral-login-prompt {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  .subpage-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .subpage-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 2rem;
     text-align: center;
   }
   
-  /* Section Parrainage */
-  .referral {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 4rem 1rem;
+  .subpage-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content-section {
+    margin: 3rem 0;
+  }
+  
+  .content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-list {
+    list-style: none;
+  }
+  
+  .content-list li {
+    margin: 1rem 0;
+    padding-left: 2rem;
     position: relative;
   }
   
-  .referral::before {
-    content: "🔥 Programme de Parrainage Hot 🔥";
+  .content-list li:before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+  }
+  
+  .example-box {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  .cta-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  
+  .crypto-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .special-offer-banner {
+    background: linear-gradient(135deg, #ff6b6b, #f7931a);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .countdown-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .countdown-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 80px;
+  }
+  
+  .countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .countdown-item label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+  
+  .spots-left {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .spots-left span {
+    color: #ffd700;
+  }
+  
+  .best-value-tag {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     position: absolute;
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
     font-weight: bold;
-    color: var(--text-color);
+    white-space: nowrap;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bonus-alert {
+    background: rgba(247, 147, 26, 0.1);
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .bonus-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .urgency-note {
+    margin-top: 1rem;
+    color: #ff6b6b;
     font-size: 0.9rem;
-    width: 90%;
-    max-width: 400px;
   }
   
-  .referral-container {
-    max-width: 1200px;
-    margin: 0 auto;
+  .purchase-options {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    margin-top: 2rem;
   }
   
-  .code-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
+  .purchase-option {
+    padding: 2rem;
+    border-radius: 10px;
+    background: var(--light-bg);
+    text-align: center;
   }
   
-  .code-display span {
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+  .purchase-option h3 {
     color: var(--primary-color);
+    margin-bottom: 1rem;
   }
   
-  /* Responsive Mobile */
+  .purchase-option p {
+    margin-bottom: 1.5rem;
+    min-height: 3em;
+  }
+  
+  .purchase-option button {
+    width: 100%;
+  }
+  
   @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .hero-content h2 {
+      font-size: 1.2rem;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
     .hero {
       padding: 2rem 1rem;
     }
-  
-    .hero-content h1 {
-      font-size: 2rem;
+    
+    .hero-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
     }
-  
-    .hero-content h2 {
-      font-size: 1.1rem;
-    }
-  
+    
     .stat {
       width: 100%;
-      min-width: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
     }
-  
-    .benefits-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .referral::before {
-      font-size: 0.8rem;
-      padding: 0.5rem 1rem;
-      top: -10px;
-    }
-  
+    
     .nav-container {
-      flex-direction: column;
-      text-align: center;
+      padding: 0.5rem 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-  
+    
     .auth-buttons {
       width: 100%;
-      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
     }
-  
-    .btn-primary, .btn-secondary {
+    
+    .logo {
       width: 100%;
+      text-align: center;
+    }
+    
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .testimonial-carousel {
+      padding: 1rem;
+    }
+    
+    .pricing-cards {
+      padding: 0 1rem;
+    }
+    
+    .referral-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+    
+    .stats-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+    
+    .purchase-options {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .modal-content {
+      width: 95%;
+      margin: 5% auto;
+      padding: 1rem;
+    }
+    
+    .countdown {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .countdown-item {
+      min-width: 60px;
+    }
+    
+    section {
+      padding: 2rem 1rem;
+    }
+    
+    .special-offer-banner {
+      margin: 1rem;
     }
   }
   
   @media (max-width: 480px) {
     .hero-content h1 {
-      font-size: 1.75rem;
-    }
-  
-    .code-display span {
       font-size: 1.5rem;
     }
-  
-    .stat .number {
-      font-size: 1.75rem;
+    
+    .hero-content h2 {
+      font-size: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .auth-buttons {
+      flex-direction: column;
+    }
+    
+    .pricing-card {
+      padding: 1rem;
+    }
+    
+    .features li {
+      font-size: 0.9rem;
+    }
+    
+    .modal-content {
+      padding: 1rem;
+    }
+    
+    .form-group input {
+      font-size: 16px; /* Évite le zoom sur mobile */
+    }
+    
+    .best-value-tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
     }
   }
   
-  /* Animations */
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.4);
+  @media (max-width: 320px) {
+    .hero-content h1 {
+      font-size: 1.25rem;
     }
-    70% {
-      box-shadow: 0 0 0 10px rgba(26, 188, 156, 0);
+    
+    .countdown-item {
+      min-width: 50px;
+      padding: 0.5rem;
     }
-    100% {
-      box-shadow: 0 0 0 0 rgba(26, 188, 156, 0);
+    
+    .countdown-item span {
+      font-size: 1.5rem;
     }
-  }
-  
-  .pulse {
-    animation: pulse 2s infinite;
-  }
-  
-  /* Optimisations générales */
-  .testimonial-carousel {
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .form-group input {
-    font-size: 16px;
-    padding: 1rem;
-  }
-  
-  .share-buttons .share-btn {
-    min-height: 48px;
   }
