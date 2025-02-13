@@ -716,28 +716,157 @@
   
   @media (max-width: 768px) {
     .hero-content h1 {
-      font-size: 2rem;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .hero-content h2 {
+      font-size: 1.2rem;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero {
+      padding: 2rem 1rem;
     }
     
     .hero-stats {
       flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+    
+    .stat {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    
+    .nav-container {
+      padding: 0.5rem 1rem;
+      flex-wrap: wrap;
       gap: 1rem;
+    }
+    
+    .auth-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .logo {
+      width: 100%;
+      text-align: center;
     }
     
     .benefits-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .testimonial-carousel {
+      padding: 1rem;
+    }
+    
+    .pricing-cards {
+      padding: 0 1rem;
     }
     
     .referral-container {
       grid-template-columns: 1fr;
+      padding: 1rem;
     }
     
     .stats-container {
       grid-template-columns: 1fr;
+      padding: 1rem;
     }
     
     .purchase-options {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .modal-content {
+      width: 95%;
+      margin: 5% auto;
+      padding: 1rem;
+    }
+    
+    .countdown {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .countdown-item {
+      min-width: 60px;
+    }
+    
+    section {
+      padding: 2rem 1rem;
+    }
+    
+    .special-offer-banner {
+      margin: 1rem;
     }
   }
   
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.5rem;
+    }
+    
+    .hero-content h2 {
+      font-size: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .auth-buttons {
+      flex-direction: column;
+    }
+    
+    .pricing-card {
+      padding: 1rem;
+    }
+    
+    .features li {
+      font-size: 0.9rem;
+    }
+    
+    .modal-content {
+      padding: 1rem;
+    }
+    
+    .form-group input {
+      font-size: 16px; /* Évite le zoom sur mobile */
+    }
+    
+    .best-value-tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .hero-content h1 {
+      font-size: 1.25rem;
+    }
+    
+    .countdown-item {
+      min-width: 50px;
+      padding: 0.5rem;
+    }
+    
+    .countdown-item span {
+      font-size: 1.5rem;
+    }
+  }
